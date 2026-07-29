@@ -13,7 +13,7 @@ export const GalleryPreview: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           badge="Visual Journey"
-          title="A Glimpse Into Our Sanctuary"
+          title="A Glimpse Into Moon Star"
           subtitle="Take a look at our rooms, restaurant, and lobby before you arrive in Manaschowk, Hetauda."
         />
 

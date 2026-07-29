@@ -69,6 +69,36 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: HOTEL_INFO.name,
+  description: HOTEL_INFO.description,
+  url: SITE_URL,
+  telephone: HOTEL_INFO.formattedPhone,
+  email: HOTEL_INFO.email,
+  priceRange: '$$',
+  image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Manaschowk',
+    addressLocality: 'Hetauda',
+    addressRegion: 'Bagmati Province',
+    addressCountry: 'NP',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: HOTEL_INFO.geo.latitude,
+    longitude: HOTEL_INFO.geo.longitude,
+  },
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Free Wi-Fi', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Parking', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Restaurant', value: true },
+    { '@type': 'LocationFeatureSpecification', name: '24-Hour Front Desk', value: true },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -80,6 +110,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.svg" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body className="font-sans bg-gray-50 text-obsidian-900 antialiased min-h-screen flex flex-col selection:bg-gold-400 selection:text-obsidian-950">
         <Navbar />

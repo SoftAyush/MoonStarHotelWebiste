@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="/" className="text-gray-400 hover:text-gold-400 transition-colors flex items-center gap-2">
-                  <ArrowRight className="w-3 h-3 text-gold-500" /> Home Sanctuary
+                  <ArrowRight className="w-3 h-3 text-gold-500" /> Home
                 </Link>
               </li>
               <li>

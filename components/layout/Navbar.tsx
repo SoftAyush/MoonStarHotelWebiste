@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
             ? 'bg-obsidian-950/95 backdrop-blur-md py-3 shadow-2xl border-b border-gold-400/20'
-            : 'bg-gradient-to-b from-black/90 via-black/50 to-transparent py-4'
+            : 'bg-linear-to-b from-black/90 via-black/50 to-transparent py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,17 +89,17 @@ export const Navbar: React.FC = () => {
                   <Phone className="w-3.5 h-3.5 text-gold-400" />
                   <span>{HOTEL_INFO.phone}</span>
                 </a>
-                <a
-                  href={`tel:${HOTEL_INFO.secondaryPhone}`}
-                  className="text-[11px] text-gray-400 hover:text-gold-300 font-medium tracking-wider"
-                >
-                  {HOTEL_INFO.secondaryPhone}
-                </a>
+                {/*<a*/}
+                {/*  href={`tel:${HOTEL_INFO.secondaryPhone}`}*/}
+                {/*  className="text-[11px] text-gray-400 hover:text-gold-300 font-medium tracking-wider"*/}
+                {/*>*/}
+                {/*  {HOTEL_INFO.secondaryPhone}*/}
+                {/*</a>*/}
               </div>
 
               <Link
                 href="/contact"
-                className="px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-300 hover:to-gold-500 text-obsidian-950 font-bold text-xs tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-gold-500/20 hover:scale-105"
+                className="px-5 py-2.5 rounded-full bg-linear-to-r from-gold-400 to-gold-600 hover:from-gold-300 hover:to-gold-500 text-obsidian-950 font-bold text-xs tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-gold-500/20 hover:scale-105"
               >
                 Inquire & Book
               </Link>
