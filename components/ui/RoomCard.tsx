@@ -1,0 +1,105 @@
+'use client';
+
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Users, Maximize, BedDouble, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Room } from '@/types';
+import { formatCurrency } from '@/lib/utils';
+
+interface RoomCardProps {
+  room: Room;
+  index?: number;
+}
+
+export const RoomCard: React.FC<RoomCardProps> = ({ room, index = 0 }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.15 }}
+      className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
+    >
+      {/* Image container */}
+      <div className="relative h-64 sm:h-72 w-full overflow-hidden">
+        <Image
+          src={room.image}
+          alt={room.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+
+        {room.featured && (
+          <div className="absolute top-4 left-4 bg-gold-400 text-obsidian-950 font-semibold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
+            Featured Suite
+          </div>
+        )}
+
+        <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-white">
+          <div>
+            <span className="text-xs uppercase tracking-widest text-gold-300 font-medium">Starting from</span>
+            <div className="flex items-baseline gap-1">
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-gold-200">
+                {formatCurrency(room.price)}
+              </span>
+              <span className="text-xs text-gray-300">/ night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Content container */}
+      <div className="p-6 sm:p-7 flex flex-col flex-grow">
+        <h3 className="font-serif text-xl sm:text-2xl font-bold text-obsidian-900 group-hover:text-gold-600 transition-colors mb-2">
+          {room.name}
+        </h3>
+
+        <p className="text-gray-600 text-sm line-clamp-2 mb-6 leading-relaxed">
+          {room.description}
+        </p>
+
+        {/* Specs bar */}
+        <div className="grid grid-cols-3 gap-2 py-3 border-y border-gray-100 text-xs text-gray-600 mb-6">
+          <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-gray-50 text-center">
+            <Users className="w-4 h-4 text-gold-600 mb-1" />
+            <span>{room.capacity.adults} Guests</span>
+          </div>
+          <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-gray-50 text-center">
+            <Maximize className="w-4 h-4 text-gold-600 mb-1" />
+            <span>{room.sizeSqFt} sq ft</span>
+          </div>
+          <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-gray-50 text-center">
+            <BedDouble className="w-4 h-4 text-gold-600 mb-1" />
+            <span className="truncate max-w-[80px]">{room.bedType.split(' ')[1] || 'Bed'}</span>
+          </div>
+        </div>
+
+        {/* Amenities preview */}
+        <div className="mb-6 flex-grow">
+          <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2.5 block">Key Amenities</span>
+          <div className="grid grid-cols-1 gap-1.5">
+            {room.amenities.slice(0, 3).map((amenity, i) => (
+              <div key={i} className="flex items-center gap-2 text-xs text-gray-700">
+                <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+                <span>{amenity}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <Link
+          href={`/contact?room=${encodeURIComponent(room.name)}`}
+          className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-obsidian-900 hover:bg-gold-500 text-white font-medium text-sm tracking-wide transition-all duration-300 group/btn shadow-md hover:shadow-gold-500/20"
+        >
+          <span>Inquire & Reserve</span>
+          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+        </Link>
+      </div>
+    </motion.div>
+  );
+};

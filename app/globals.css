@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* ─── Tailwind v4 CSS-first theme configuration ─── */
+@theme {
+  /* Colors: Gold palette */
+  --color-gold-50: #FDFBF7;
+  --color-gold-100: #F7F2E6;
+  --color-gold-200: #EBDCB9;
+  --color-gold-300: #DFC68B;
+  --color-gold-400: #D4AF37;
+  --color-gold-500: #C5A880;
+  --color-gold-600: #B59458;
+  --color-gold-700: #91733E;
+  --color-gold-800: #6C5329;
+  --color-gold-900: #483518;
+
+  /* Colors: Obsidian palette */
+  --color-obsidian-50: #F4F6F8;
+  --color-obsidian-100: #E4E8EE;
+  --color-obsidian-200: #C5CDD9;
+  --color-obsidian-300: #9BA9BC;
+  --color-obsidian-400: #697B94;
+  --color-obsidian-500: #2A323D;
+  --color-obsidian-600: #1F2630;
+  --color-obsidian-700: #161C24;
+  --color-obsidian-800: #10141A;
+  --color-obsidian-900: #0B0E12;
+  --color-obsidian-950: #07080A;
+
+  /* Colors: Champagne */
+  --color-champagne-light: #FAF5EE;
+  --color-champagne: #E6DAA6;
+  --color-champagne-dark: #BFA95D;
+
+  /* Font families */
+  --font-family-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
+  --font-family-sans: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.7s ease-in-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  /* Keyframes */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+}
+
+/* ─── Base styles ─── */
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: #161C24;
+    background-color: #FAF9F6;
+  }
+
+  ::selection {
+    background-color: #D4AF37;
+    color: #07080A;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #10141A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C5A880;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37;
+  }
+}
+
+/* ─── Utility classes ─── */
+@layer utilities {
+  .glass-dark {
+    background: rgba(16, 20, 26, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(197, 168, 128, 0.15);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #F7F2E6 0%, #D4AF37 50%, #C5A880 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .border-gold-gradient {
+    border-image: linear-gradient(135deg, #D4AF37, #C5A880, #91733E) 1;
+  }
+}
