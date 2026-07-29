@@ -20,7 +20,7 @@ export const HOTEL_INFO = {
     formattedSecondaryPhone: '+977 9855017880',
     email: 'moonstarhotel@gmail.com',
     reservationsEmail: 'moonstarhotel@gmail.com',
-    hours: '24 Hours / 7 Days a Week',
+    hours: '24/7 Days a Week',
     checkIn: '12:00 PM',
     checkOut: '12:00 PM',
     googleMapsUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.1432217923993!2d85.03626969999999!3d27.4336469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb49c3cc30b805%3A0xb7e7692b05413d5e!2sMoon%20Star%20Hotel!5e0!3m2!1sen!2snp!4v1785292149009!5m2!1sen!2snp',
