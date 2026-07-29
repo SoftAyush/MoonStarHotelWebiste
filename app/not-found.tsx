@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Home, Phone, ArrowLeft } from 'lucide-react';
+import { Home, Phone } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 import { HOTEL_INFO } from '@/constants/hotelData';
 
@@ -37,7 +37,7 @@ export default function NotFound() {
       >
         {/* Logo */}
         <div className="flex justify-center mb-8">
-          <Logo className="h-16 w-auto" variant="light" />
+          <Logo className="h-16 w-auto" />
         </div>
 
         {/* 404 number */}

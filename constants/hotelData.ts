@@ -1,4 +1,10 @@
-import { Room, GalleryItem, Facility, StatItem, TeamMember, Testimonial } from '@/types';
+import { Room, GalleryItem, Facility, StatItem, TeamMember } from '@/types';
+
+// Resolves to the Vercel-assigned production domain automatically; swap in a
+// custom domain later via NEXT_PUBLIC_SITE_URL without touching this file.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000');
 
 export const HOTEL_INFO = {
   name: 'Moon Star Restaurant & Lodge',

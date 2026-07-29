@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/constants/hotelData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://moonstarhotel.com';
+  const baseUrl = SITE_URL;
 
   return [
     {

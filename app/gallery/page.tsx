@@ -7,8 +7,8 @@ import { GALLERY_ITEMS } from '@/constants/hotelData';
 import { ContactCTA } from '@/components/sections/ContactCTA';
 
 export const metadata: Metadata = {
-  title: 'Media Gallery | High Resolution Showcase',
-  description: 'Browse the official photo gallery of Moon Star Hotel featuring our suites, Michelin dining venues, rooftop infinity pool, and luxury architecture.',
+  title: 'Photo Gallery | Moon Star Restaurant & Lodge',
+  description: 'Browse photos of Moon Star Restaurant & Lodge in Hetauda — comfortable rooms, our restaurant, lobby, and parking area in Manaschowk, Makawanpur.',
 };
 
 export default function GalleryPage() {
@@ -35,7 +35,7 @@ export default function GalleryPage() {
             Photo & Media <span className="text-gold-gradient">Gallery</span>
           </h1>
           <p className="text-gray-300 text-base sm:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Immerse yourself in high-resolution moments captured across our luxury suites, dining venues, and coastal grounds.
+            A look at our rooms, restaurant, and lobby at Moon Star in Manaschowk, Hetauda.
           </p>
         </div>
       </section>

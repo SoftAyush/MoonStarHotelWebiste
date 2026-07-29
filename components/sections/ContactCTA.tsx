@@ -21,7 +21,7 @@ export const ContactCTA: React.FC = () => {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-400/30 bg-gold-400/10 text-gold-300 text-xs font-semibold tracking-widest uppercase mb-6"
         >
           <Sparkles className="w-3.5 h-3.5" />
-          Bespoke Reservations
+          Book Your Stay
         </motion.div>
 
         <motion.h2
@@ -31,7 +31,7 @@ export const ContactCTA: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
         >
-          Ready to Experience <span className="text-gold-gradient">Unrivaled Luxury</span>?
+          Ready for <span className="text-gold-gradient">Hospitality with a Heart</span>?
         </motion.h2>
 
         <motion.p
@@ -41,7 +41,7 @@ export const ContactCTA: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light"
         >
-          Contact our dedicated concierge team today to tailor your stay, arrange limousine transfers, or reserve your private suite.
+          Reach out to our front desk to check room availability, ask about our restaurant menu, or plan your visit to Hetauda.
         </motion.p>
 
         <motion.div

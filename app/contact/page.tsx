@@ -235,7 +235,7 @@ export default function ContactPage() {
             Get In <span className="text-gold-gradient">Touch</span>
           </h1>
           <p className="text-gray-300 text-base sm:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Our dedicated team is delighted to assist with suite inquiries, private dining arrangements, or tailored coastal itineraries.
+            Our team is happy to help with room availability, restaurant reservations, or directions to Manaschowk, Hetauda.
           </p>
         </div>
       </section>
@@ -306,15 +306,15 @@ export default function ContactPage() {
                   <Sparkles className="w-32 h-32 text-gold-400" />
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-white mb-4">
-                  Find Our Sanctuary
+                  Find Us in Hetauda
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                  Moon Star Hotel is located in the quiet coastal enclave of Coastal Haven, just 25 minutes from the International Airport. Limousine airport transfers available upon request.
+                  Moon Star Restaurant & Lodge is located in Manaschowk, Hetauda-2, Makawanpur — easy to find and easy to reach from the Hetauda bus park and highway.
                 </p>
                 <div className="space-y-3 text-xs text-gold-300 border-t border-white/10 pt-4">
-                  <p>✓ Private Helipad Access Available</p>
-                  <p>✓ Complimentary Valet Parking</p>
-                  <p>✓ Yacht Marina Access (5 mins away)</p>
+                  <p>✓ 24/7 Front Desk & Check-in</p>
+                  <p>✓ Secure On-Site Parking</p>
+                  <p>✓ Free High-Speed Wi-Fi</p>
                 </div>
               </div>
 

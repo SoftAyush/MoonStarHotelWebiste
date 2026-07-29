@@ -9,8 +9,8 @@ import { HOTEL_STATS, TEAM_MEMBERS, FACILITIES_DATA } from '@/constants/hotelDat
 import { ContactCTA } from '@/components/sections/ContactCTA';
 
 export const metadata: Metadata = {
-  title: 'About Us | Our Story & Heritage',
-  description: 'Learn about Moon Star Hotel founding philosophy, mission, award-winning executive culinary team, and commitment to 5-star luxury hospitality.',
+  title: 'About Us | Moon Star Restaurant & Lodge, Hetauda',
+  description: 'Meet the team behind Moon Star Restaurant & Lodge in Manaschowk, Hetauda — a locally run lodge and restaurant serving Makawanpur travelers with genuine Nepali hospitality.',
 };
 
 export default function AboutPage() {
@@ -31,13 +31,13 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-gold-400 font-semibold mb-3 block">
-            Established 1999
+            Manaschowk, Hetauda
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-white mb-6">
-            Our Story & Legacy of <span className="text-gold-gradient">Excellence</span>
+            Our Story & <span className="text-gold-gradient">Hospitality</span>
           </h1>
           <p className="text-gray-300 text-base sm:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Discover the passion, craftsmanship, and unyielding commitment behind the coast’s premier 5-star sanctuary.
+            Discover the people and philosophy behind Hetauda's home for comfortable stays and honest, delicious food.
           </p>
         </div>
       </section>
@@ -49,16 +49,16 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <SectionTitle
                 badge="Heritage & Philosophy"
-                title="Conceived as a Beacon of Pure Luxury"
-                subtitle="Moon Star Hotel was crafted to bridge natural coastal majesty with hyper-refined hospitality."
+                title="Built On Genuine Nepali Hospitality"
+                subtitle="Moon Star Restaurant & Lodge was founded to give travelers in Hetauda a comfortable, welcoming place to stay and eat."
                 centered={false}
               />
               <div className="space-y-4 text-gray-600 text-base leading-relaxed">
                 <p>
-                  Over two decades ago, master architects and visionary hotelier pioneers envisioned a destination where guests could pause time. Set upon natural cliffside contours overlooking the ocean, Moon Star Hotel was built using sustainable rare teak, Italian travertine, and hand-carved local granite.
+                  Located in Manaschowk, Hetauda-2, Moon Star was built for travelers passing through Makawanpur — families, business visitors, and road-trippers — who want a clean room, a good meal, and a front desk that treats them like family.
                 </p>
                 <p>
-                  Every suite, corridor, and garden patio is positioned to capture natural light and acoustic tranquility. Our ethos remains unchanged: offering understated luxury paired with warm, intuitive service that feels personal and unscripted.
+                  Our ethos is simple and unchanged since day one: comfortable rooms, freshly cooked Nepali, Indian, and Continental food, and warm, intuitive service. It's hospitality with a heart, not a script.
                 </p>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               </div>
               <h3 className="font-serif text-2xl font-bold text-obsidian-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                To deliver unforgettable, bespoke hospitality experiences by surrounding every guest with unmatched comfort, culinary mastery, and genuine warmth while safeguarding our surrounding environment.
+                To give every guest in Hetauda a comfortable room, a delicious meal, and genuinely warm service — the same care we'd want for our own family.
               </p>
             </div>
 
@@ -103,7 +103,7 @@ export default function AboutPage() {
               </div>
               <h3 className="font-serif text-2xl font-bold text-obsidian-900 mb-4">Our Vision</h3>
               <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                To stand universally recognized as the benchmark of luxury coastal hospitality, where timeless tradition meets modern innovation and every stay becomes a lifelong memory.
+                To be Makawanpur's most trusted lodge and restaurant — the first name travelers to Hetauda think of for a comfortable stay and honest food.
               </p>
             </div>
           </div>
@@ -114,9 +114,9 @@ export default function AboutPage() {
       <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            badge="World Class Amenities"
-            title="Luxury Facilities & Offerings"
-            subtitle="Explore our comprehensive estate amenities crafted to pamper your senses."
+            badge="What We Offer"
+            title="Facilities & Amenities"
+            subtitle="Everything you need for a comfortable stay in Hetauda, included as standard."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

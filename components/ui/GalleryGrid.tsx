@@ -14,13 +14,11 @@ interface GalleryGridProps {
 }
 
 const CATEGORIES = [
-  { key: 'all', label: 'All Showcase' },
-  { key: 'rooms', label: 'Luxury Suites' },
-  { key: 'lobby', label: 'Lobby & Lounge' },
-  { key: 'restaurant', label: 'Fine Dining' },
-  { key: 'pool', label: 'Pool & Spa' },
-  { key: 'exterior', label: 'Architecture' },
-  { key: 'events', label: 'Events' },
+  { key: 'all', label: 'All Photos' },
+  { key: 'rooms', label: 'Rooms' },
+  { key: 'lobby', label: 'Lobby' },
+  { key: 'restaurant', label: 'Restaurant' },
+  { key: 'exterior', label: 'Exterior & Parking' },
 ];
 
 export const GalleryGrid: React.FC<GalleryGridProps> = ({

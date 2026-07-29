@@ -17,8 +17,8 @@ export const WelcomeSection: React.FC = () => {
           <div className="lg:col-span-6">
             <SectionTitle
               badge="Welcome to Moon Star"
-              title="A Timeless Haven of Elegance & Serenity"
-              subtitle="Founded on the principles of immaculate hospitality and architectural grandeur, Moon Star Hotel transforms luxury into an art form."
+              title="A Warm Stay in the Heart of Hetauda"
+              subtitle="Founded on the principle of genuine Nepali hospitality, Moon Star Restaurant & Lodge offers comfortable rooms and authentic dining in Manaschowk."
               centered={false}
             />
 
@@ -29,7 +29,7 @@ export const WelcomeSection: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="text-gray-600 text-base leading-relaxed mb-6"
             >
-              Every corner of our sanctuary is tailored to evoke tranquility. Whether you are reclining by our temperature-regulated infinity pool, tasting multi-course masterworks from Michelin chefs, or resting in customized Egyptian cotton linens, your stay is elevated beyond measure.
+              Whether you're passing through Hetauda for business, a family trip, or a quiet getaway, our lodge and restaurant are built around comfort and care: clean rooms, freshly cooked Nepali, Indian, and Continental meals, and a front desk that's always awake to help.
             </motion.p>
 
             <motion.div
@@ -43,25 +43,25 @@ export const WelcomeSection: React.FC = () => {
                 <div className="w-8 h-8 rounded-full bg-gold-400/10 text-gold-600 flex items-center justify-center shrink-0">
                   <CheckCircle className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-medium text-obsidian-900">24/7 Personal Butler Service</span>
+                <span className="text-sm font-medium text-obsidian-900">24/7 Front Desk & Room Service</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-gold-400/10 text-gold-600 flex items-center justify-center shrink-0">
                   <CheckCircle className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-medium text-obsidian-900">Private Rooftop Sky Deck</span>
+                <span className="text-sm font-medium text-obsidian-900">Free High-Speed Wi-Fi</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-gold-400/10 text-gold-600 flex items-center justify-center shrink-0">
                   <CheckCircle className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-medium text-obsidian-900">Award-Winning Culinary</span>
+                <span className="text-sm font-medium text-obsidian-900">Authentic Nepali Kitchen</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-gold-400/10 text-gold-600 flex items-center justify-center shrink-0">
                   <CheckCircle className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-medium text-obsidian-900">Hydrotherapy Spa Spa</span>
+                <span className="text-sm font-medium text-obsidian-900">Secure On-Site Parking</span>
               </div>
             </motion.div>
 
@@ -92,7 +92,7 @@ export const WelcomeSection: React.FC = () => {
             >
               <Image
                 src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1000&auto=format&fit=crop"
-                alt="Moon Star Lobby Entrance"
+                alt="Moon Star Restaurant & Lodge reception in Manaschowk, Hetauda"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -109,7 +109,7 @@ export const WelcomeSection: React.FC = () => {
             >
               <Image
                 src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=600&auto=format&fit=crop"
-                alt="Moon Star Pool View"
+                alt="Moon Star guest room interior"
                 fill
                 sizes="300px"
                 className="object-cover"
@@ -120,8 +120,8 @@ export const WelcomeSection: React.FC = () => {
             <div className="absolute -top-6 -right-4 sm:-top-8 sm:-right-6 bg-obsidian-950 text-white p-5 sm:p-6 rounded-2xl border border-gold-400/30 shadow-2xl flex items-center gap-4">
               <Sparkles className="w-8 h-8 text-gold-400 animate-pulse shrink-0" />
               <div>
-                <span className="font-serif text-2xl font-bold text-gold-300 block">25+ Years</span>
-                <span className="text-xs text-gray-300 tracking-wide uppercase">Of 5-Star Excellence</span>
+                <span className="font-serif text-2xl font-bold text-gold-300 block">Locally Loved</span>
+                <span className="text-xs text-gray-300 tracking-wide uppercase">Hospitality With A Heart</span>
               </div>
             </div>
           </div>

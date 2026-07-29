@@ -14,7 +14,7 @@ export const GalleryPreview: React.FC = () => {
         <SectionTitle
           badge="Visual Journey"
           title="A Glimpse Into Our Sanctuary"
-          subtitle="Explore the breathtaking architecture, luxurious rooms, and serene poolscapes awaiting your arrival."
+          subtitle="Take a look at our rooms, restaurant, and lobby before you arrive in Manaschowk, Hetauda."
         />
 
         <GalleryGrid items={GALLERY_ITEMS} showFilters={false} limit={6} />

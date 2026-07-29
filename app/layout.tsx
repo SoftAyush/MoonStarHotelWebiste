@@ -4,7 +4,7 @@ import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
-import { HOTEL_INFO } from '@/constants/hotelData';
+import { HOTEL_INFO, SITE_URL } from '@/constants/hotelData';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -36,11 +36,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: HOTEL_INFO.name }],
   creator: HOTEL_INFO.name,
-  metadataBase: new URL('https://moonstarhotel.com'),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://moonstarhotel.com',
+    url: SITE_URL,
     title: `${HOTEL_INFO.name} | ${HOTEL_INFO.tagline}`,
     description: HOTEL_INFO.description,
     siteName: HOTEL_INFO.name,
