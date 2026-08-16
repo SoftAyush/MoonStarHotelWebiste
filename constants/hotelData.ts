@@ -23,7 +23,7 @@ export const HOTEL_INFO = {
     hours: '24/7 Days a Week',
     checkIn: '12:00 PM',
     checkOut: '12:00 PM',
-    googleMapsUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.1432217923993!2d85.03626969999999!3d27.4336469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb49c3cc30b805%3A0xb7e7692b05413d5e!2sMoon%20Star%20Hotel!5e0!3m2!1sen!2snp!4v1785292149009!5m2!1sen!2snp',
+    googleMapsUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.1432089593886!2d85.0362708!3d27.433647300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb495b9546a261%3A0x538f9e772ce78a8e!2sMoon%20Star%20Restaurant%20%26%20Lodge!5e0!3m2!1sen!2snp!4v1786868662189!5m2!1sen!2snp',
     socials: {
         facebook: 'https://facebook.com',
         instagram: 'https://instagram.com',
@@ -145,9 +145,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
         title: 'Lobby & Reception Desk',
         category: 'lobby',
         categoryLabel: 'Warm Hospitality',
-        image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop',
+        image: '/gallery/reception.jpeg',
         caption: '24/7 friendly front desk welcoming guests with heart.',
-        aspectRatio: 'portrait'
+        aspectRatio: 'landscape'
     },
     {
         id: '4',
