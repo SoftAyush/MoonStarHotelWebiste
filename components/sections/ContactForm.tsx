@@ -142,7 +142,7 @@ function ContactFormInner() {
                 <option value="">Select Room (Optional)</option>
                 {ROOMS_DATA.map((r) => (
                   <option key={r.id} value={r.name}>
-                    {r.name} (${r.price}/night)
+                    {r.name} (रु {r.price}/night)
                   </option>
                 ))}
               </select>
