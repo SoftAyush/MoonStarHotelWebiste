@@ -25,13 +25,14 @@ export const metadata: Metadata = {
   },
   description: HOTEL_INFO.description,
   keywords: [
-    'Moon Star Hotel',
+    'Moon Star Restaurant & Lodge',
     'Moon Star Restaurant and Lodge',
+    'Hotel in Hetauda',
     'Lodge in Hetauda',
-    'Manaschowk Hotel',
-    'Comfortable Stay Hetauda',
-    'Delicious Food Hetauda',
-    'Makawanpur Hotel Nepal',
+    'Restaurant in Hetauda',
+    'Family Hotel Hetauda',
+    'Hetauda accommodation',
+    'Makwanpur Hotel Nepal',
     'Hetauda Hotel Booking'
   ],
   authors: [{ name: HOTEL_INFO.name }],
@@ -69,35 +70,100 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'LodgingBusiness',
-  name: HOTEL_INFO.name,
-  description: HOTEL_INFO.description,
-  url: SITE_URL,
-  telephone: HOTEL_INFO.formattedPhone,
-  email: HOTEL_INFO.email,
-  priceRange: '$$',
-  image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Manaschowk',
-    addressLocality: 'Hetauda',
-    addressRegion: 'Bagmati Province',
-    addressCountry: 'NP',
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LodgingBusiness',
+    name: HOTEL_INFO.name,
+    description: HOTEL_INFO.description,
+    url: SITE_URL,
+    telephone: HOTEL_INFO.formattedPhone,
+    email: HOTEL_INFO.email,
+    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Manaschowk',
+      addressLocality: 'Hetauda',
+      addressRegion: 'Bagmati Province',
+      addressCountry: 'NP',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: HOTEL_INFO.geo.latitude,
+      longitude: HOTEL_INFO.geo.longitude,
+    },
+    amenityFeature: [
+      { '@type': 'LocationFeatureSpecification', name: 'Free Wi-Fi', value: true },
+      { '@type': 'LocationFeatureSpecification', name: 'Parking', value: true },
+      { '@type': 'LocationFeatureSpecification', name: 'Restaurant', value: true },
+      { '@type': 'LocationFeatureSpecification', name: '24-Hour Front Desk', value: true },
+    ],
+    sameAs: [
+      HOTEL_INFO.socials.facebook,
+      HOTEL_INFO.socials.instagram,
+      HOTEL_INFO.socials.twitter,
+      HOTEL_INFO.socials.tripadvisor,
+      HOTEL_INFO.socials.linkedin,
+    ],
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: HOTEL_INFO.geo.latitude,
-    longitude: HOTEL_INFO.geo.longitude,
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Restaurant',
+    name: 'Moon Star Restaurant',
+    servesCuisine: ['Nepali', 'Indian', 'Continental'],
+    telephone: HOTEL_INFO.formattedPhone,
+    email: HOTEL_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: HOTEL_INFO.streetAddress,
+      addressLocality: HOTEL_INFO.locality,
+      addressRegion: HOTEL_INFO.region,
+      postalCode: HOTEL_INFO.postalCode,
+      addressCountry: HOTEL_INFO.country,
+    },
+    url: SITE_URL,
+    menu: `${SITE_URL}/menu`,
+    hasMap: HOTEL_INFO.googleMapsUrl,
   },
-  amenityFeature: [
-    { '@type': 'LocationFeatureSpecification', name: 'Free Wi-Fi', value: true },
-    { '@type': 'LocationFeatureSpecification', name: 'Parking', value: true },
-    { '@type': 'LocationFeatureSpecification', name: 'Restaurant', value: true },
-    { '@type': 'LocationFeatureSpecification', name: '24-Hour Front Desk', value: true },
-  ],
-};
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Where is Moon Star Restaurant & Lodge located?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Moon Star Restaurant & Lodge is located in ${HOTEL_INFO.addressFull}`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What rooms are available at Moon Star Restaurant & Lodge?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The property offers Deluxe Comfort Room, Executive Lodge Suite, and Family Heritage Suite options.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Moon Star Restaurant & Lodge have Wi-Fi?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, free high-speed Wi-Fi is available for guests.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does Moon Star Restaurant & Lodge have a restaurant?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, Moon Star Restaurant offers Nepali, Indian, and Continental food for guests and diners.',
+        },
+      },
+    ],
+  },
+];
 
 export default function RootLayout({
   children,
@@ -110,10 +176,13 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.svg" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        {structuredData.map((schema, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
       </head>
       <body className="font-sans bg-gray-50 text-obsidian-900 antialiased min-h-screen flex flex-col selection:bg-gold-400 selection:text-obsidian-950">
         <Navbar />

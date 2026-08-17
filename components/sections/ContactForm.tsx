@@ -14,7 +14,7 @@ function ContactFormInner() {
     name: '',
     email: '',
     phone: '',
-    subject: 'General Inquiry',
+    subject: 'Booking Inquiry',
     roomType: initialRoom,
     checkIn: '',
     checkOut: '',
@@ -31,14 +31,32 @@ function ContactFormInner() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to send message');
+      }
+
       setIsSuccess(true);
-    }, 1200);
+    } catch (error) {
+      console.error('Submit error:', error);
+      alert(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,7 +84,7 @@ function ContactFormInner() {
                 name: '',
                 email: '',
                 phone: '',
-                subject: 'General Inquiry',
+                subject: 'Booking Inquiry',
                 roomType: '',
                 checkIn: '',
                 checkOut: '',
@@ -119,10 +137,11 @@ function ContactFormInner() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 mb-2">
-                Phone Number
+                Phone Number *
               </label>
               <input
                 type="tel"
+                required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+1 (555) 000-0000"
@@ -132,14 +151,15 @@ function ContactFormInner() {
 
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 mb-2">
-                Preferred Room Type
+                Preferred Room Type *
               </label>
               <select
+                required
                 value={formData.roomType}
                 onChange={(e) => setFormData({ ...formData, roomType: e.target.value })}
                 className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-gold-400 focus:bg-white transition-colors"
               >
-                <option value="">Select Room (Optional)</option>
+                <option value="">Select Room</option>
                 {ROOMS_DATA.map((r) => (
                   <option key={r.id} value={r.name}>
                     {r.name} (रु {r.price}/night)
@@ -152,10 +172,11 @@ function ContactFormInner() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 mb-2">
-                Expected Check-in
+                Expected Check-in *
               </label>
               <input
                 type="date"
+                required
                 value={formData.checkIn}
                 onChange={(e) => setFormData({ ...formData, checkIn: e.target.value })}
                 className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-gold-400 focus:bg-white transition-colors"
@@ -164,10 +185,11 @@ function ContactFormInner() {
 
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 mb-2">
-                Expected Check-out
+                Expected Check-out *
               </label>
               <input
                 type="date"
+                required
                 value={formData.checkOut}
                 onChange={(e) => setFormData({ ...formData, checkOut: e.target.value })}
                 className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 text-sm focus:outline-none focus:border-gold-400 focus:bg-white transition-colors"
@@ -177,10 +199,9 @@ function ContactFormInner() {
 
           <div>
             <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 mb-2">
-              Your Message or Special Request *
+              Your Message or Special Request
             </label>
             <textarea
-              required
               rows={4}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}

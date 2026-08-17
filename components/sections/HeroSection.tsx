@@ -18,8 +18,8 @@ export const HeroSection: React.FC = () => {
         className="absolute inset-0 z-0"
       >
         <Image
-          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1920&auto=format&fit=crop"
-          alt="Moon Star Restaurant & Lodge Facade"
+          src="/moonstar/bar-area.jpeg"
+          alt="Moon Star Restaurant & Lodge interior"
           fill
           priority
           sizes="100vw"
@@ -53,9 +53,9 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-4"
           >
-            MOON STAR <br />
+            {HOTEL_INFO.name} <br />
             <span className="text-gold-gradient text-3xl sm:text-5xl lg:text-6xl block font-normal mt-2">
-              Restaurant & Lodge
+              in Hetauda
             </span>
           </motion.h1>
 
@@ -77,7 +77,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl font-light"
           >
-            {HOTEL_INFO.description}
+            A comfortable hotel and restaurant in Hetauda, offering clean rooms, warm hospitality, free Wi-Fi, secure parking, and family-friendly dining for travelers and locals.
           </motion.p>
 
           {/* Quick Feature Badges from Card */}

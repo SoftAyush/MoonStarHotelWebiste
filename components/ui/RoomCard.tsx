@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Users, Maximize, BedDouble, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Users, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Room } from '@/types';
 import { formatCurrency } from '@/lib/utils';
 
@@ -26,7 +26,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room, index = 0 }) => {
       <div className="relative h-64 sm:h-72 w-full overflow-hidden">
         <Image
           src={room.image}
-          alt={room.name}
+          alt={`${room.name} at Moon Star Lodge Hetauda`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -34,21 +34,25 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room, index = 0 }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
         {room.featured && (
-          <div className="absolute top-4 left-4 bg-gold-400 text-obsidian-950 font-semibold text-xs tracking-wider uppercase px-3 py-1 rounded-full shadow-md">
-            Featured Suite
+          <div className="absolute top-4 left-4 bg-gold-400 text-obsidian-950 font-semibold text-xs tracking-wider uppercase px-3 py-1.5 rounded-full shadow-md">
+            Featured
           </div>
         )}
 
         <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-white">
           <div>
-            <span className="text-xs uppercase tracking-widest text-gold-300 font-medium">Starting from</span>
+            <span className="text-xs uppercase tracking-widest text-gold-300 font-medium">Price per room</span>
             <div className="flex items-baseline gap-1">
               <span className="font-serif text-2xl sm:text-3xl font-bold text-gold-200">
                 {formatCurrency(room.price)}
               </span>
-              <span className="text-xs text-gray-300">/ night</span>
             </div>
           </div>
+          {room.features?.includes('Non-Air-Conditioned') && (
+            <span className="text-xs bg-white/20 backdrop-blur px-2 py-1 rounded text-gray-100 font-medium">
+              Non-A/C
+            </span>
+          )}
         </div>
       </div>
 
@@ -62,26 +66,21 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room, index = 0 }) => {
           {room.description}
         </p>
 
-        {/* Specs bar */}
-        <div className="grid grid-cols-3 gap-2 py-3 border-y border-gray-100 text-xs text-gray-600 mb-6">
-          <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-gray-50 text-center">
-            <Users className="w-4 h-4 text-gold-600 mb-1" />
-            <span>{room.capacity.adults} Guests</span>
+        {/* Capacity and Bed Type */}
+        <div className="py-4 border-y border-gray-100 text-sm text-gray-700 mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Users className="w-4 h-4 text-gold-600" />
+            <span className="font-medium">Capacity: {room.capacity.adults} {room.capacity.adults === 1 ? 'guest' : 'guests'}</span>
           </div>
-          <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-gray-50 text-center">
-            <Maximize className="w-4 h-4 text-gold-600 mb-1" />
-            <span>{room.sizeSqFt} sq ft</span>
-          </div>
-          <div className="flex flex-col items-center justify-center p-1.5 rounded-lg bg-gray-50 text-center">
-            <BedDouble className="w-4 h-4 text-gold-600 mb-1" />
-            <span className="truncate max-w-[80px]">{room.bedType.split(' ')[1] || 'Bed'}</span>
+          <div className="text-sm text-gray-600">
+            <span className="font-medium">Bed Type:</span> {room.bedType}
           </div>
         </div>
 
-        {/* Amenities preview */}
+        {/* Key Amenities */}
         <div className="mb-6 flex-grow">
-          <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2.5 block">Key Amenities</span>
-          <div className="grid grid-cols-1 gap-1.5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2.5 block">Includes</span>
+          <div className="grid grid-cols-1 gap-2">
             {room.amenities.slice(0, 3).map((amenity, i) => (
               <div key={i} className="flex items-center gap-2 text-xs text-gray-700">
                 <CheckCircle2 className="w-3.5 h-3.5 text-gold-500 shrink-0" />
@@ -94,9 +93,9 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room, index = 0 }) => {
         {/* CTA Button */}
         <Link
           href={`/contact?room=${encodeURIComponent(room.name)}`}
-          className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-obsidian-900 hover:bg-gold-500 text-white font-medium text-sm tracking-wide transition-all duration-300 group/btn shadow-md hover:shadow-gold-500/20"
+          className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-obsidian-900 hover:bg-gold-500 text-white hover:text-obsidian-950 font-medium text-sm tracking-wide transition-all duration-300 group/btn shadow-md hover:shadow-gold-500/20"
         >
-          <span>Inquire & Reserve</span>
+          <span>Book Now</span>
           <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
         </Link>
       </div>

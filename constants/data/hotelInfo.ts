@@ -9,8 +9,28 @@ export const HOTEL_INFO = {
     brandName: 'MOON STAR',
     subTitle: 'Restaurant & Lodge',
     tagline: 'Hospitality with a Heart',
-    description: 'Welcome to Moon Star Restaurant & Lodge in Manaschowk, Hetauda. We deliver a blend of comfortable stays, delicious authentic dining, free high-speed Wi-Fi, and secure parking with genuine heart-felt Nepali hospitality.',
-    address: 'Hetauda-2, Manaschowk, Makawanpur, Nepal',
+    description: 'Welcome to Moon Star Restaurant & Lodge in Manas Chowk, Hetauda. We deliver a blend of comfortable stays, delicious authentic dining, free high-speed Wi-Fi, and secure parking with genuine heart-felt Nepali hospitality.',
+    
+    // Full official address for NAP, schema, citations, Google Business Profile
+    addressFull: 'Hetauda Sub-Metropolitan City–2, Manas Chowk, 590018, Bagmati Province, Nepal',
+    addressFullWithName: 'Moon Star Restaurant & Lodge, Hetauda Sub-Metropolitan City–2, Manas Chowk, 590018, Bagmati Province, Nepal',
+    
+    // Short address for user-facing content, homepage, descriptions
+    address: 'Moon Star Restaurant & Lodge, Manas Chowk, Hetauda',
+    addressShort: 'Manas Chowk, Hetauda, Nepal',
+    
+    // Structured address components for schema
+    streetAddress: 'Manas Chowk',
+    locality: 'Hetauda',
+    administrativeArea: 'Hetauda Sub-Metropolitan City–2',
+    postalCode: '590018',
+    region: 'Bagmati Province',
+    country: 'NP',
+    
+    // Nepali versions
+    addressNepali: 'हेटौँडा उपमहानगरपालिका-2, मानस चोक, 590018, बागमती प्रदेश, नेपाल',
+    localityNepali: 'हेटौँडा',
+    
     geo: {latitude: 27.4284, longitude: 85.0298},
     phone: '9865501880',
     secondaryPhone: '9855017880',

@@ -150,7 +150,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>© {new Date().getFullYear()} {HOTEL_INFO.name}. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-gold-400 cursor-pointer">Manaschowk, Hetauda-2</span>
+            <span className="hover:text-gold-400 cursor-pointer">{HOTEL_INFO.addressShort}</span>
             <span className="hover:text-gold-400 cursor-pointer">Makawanpur, Nepal</span>
           </div>
         </div>

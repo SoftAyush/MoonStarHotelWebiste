@@ -7,8 +7,8 @@ import { ContactForm } from '@/components/sections/ContactForm';
 import { HOTEL_INFO } from '@/constants/hotelData';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Moon Star Restaurant & Lodge, Hetauda',
-  description: 'Contact Moon Star Restaurant & Lodge in Manaschowk, Hetauda-2, Makawanpur. Call, email, or send an inquiry for room availability and directions.',
+  title: 'Contact Moon Star Restaurant & Lodge | Hotel & Restaurant in Hetauda',
+  description: 'Contact Moon Star Restaurant & Lodge in Manas Chowk, Hetauda for room bookings, restaurant inquiries, directions, and accommodation information.',
 };
 
 export default function ContactPage() {
@@ -35,7 +35,7 @@ export default function ContactPage() {
             Get In <span className="text-gold-gradient">Touch</span>
           </h1>
           <p className="text-gray-300 text-base sm:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Our team is happy to help with room availability, restaurant reservations, or directions to Manaschowk, Hetauda.
+            Moon Star Restaurant & Lodge in Manas Chowk, Hetauda offers accommodation, dining, and guest support for travelers, families, and visitors exploring Hetauda and Makwanpur.
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function ContactPage() {
             <ContactCard
               icon={<MapPin className="w-6 h-6" />}
               title="Hotel Address"
-              value={HOTEL_INFO.address}
+              value={HOTEL_INFO.addressFullWithName}
               actionText="View Location"
               actionHref="#map-section"
               delay={0}
@@ -104,10 +104,10 @@ export default function ContactPage() {
                   <Sparkles className="w-32 h-32 text-gold-400" />
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-white mb-4">
-                  Find Us in Hetauda
+                  Find Us in Manas Chowk, Hetauda
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                  Moon Star Restaurant & Lodge is located in Manaschowk, Hetauda-2, Makawanpur — easy to find and easy to reach from the Hetauda bus park and highway.
+                  Moon Star Restaurant & Lodge is located in Manas Chowk, Hetauda, making it a convenient choice for travelers looking for accommodation, dining, and hospitality in Hetauda.
                 </p>
                 <div className="space-y-3 text-xs text-gold-300 border-t border-white/10 pt-4">
                   <p>✓ 24/7 Front Desk & Check-in</p>
