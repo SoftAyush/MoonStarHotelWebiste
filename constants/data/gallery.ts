@@ -3,10 +3,10 @@ import { GalleryItem } from '@/types';
 export const GALLERY_ITEMS: GalleryItem[] = [
     {
         id: '1',
-        title: 'Moon Star Deluxe Suite',
+        title: 'Moon Star Family Suite',
         category: 'rooms',
         categoryLabel: 'Comfortable Rooms',
-        image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop',
+        image: '/moonstar/family-room.jpeg',
         caption: 'Comfortable stay with modern decor and peaceful ambience.',
         aspectRatio: 'landscape'
     },
@@ -15,7 +15,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
         title: 'Moon Star Dining Hall',
         category: 'restaurant',
         categoryLabel: 'Delicious Food',
-        image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop',
+        image: '/moonstar/restaurant-area.jpeg',
         caption: 'Authentic Nepali, Indian, and Chinese culinary delights.',
         aspectRatio: 'landscape'
     },
@@ -51,7 +51,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
         title: 'Executive Suite Lounge',
         category: 'rooms',
         categoryLabel: 'Comfortable Rooms',
-        image: 'https://images.unsplash.com/photo-1591088398332-8a7791972843?q=80&w=1200&auto=format&fit=crop',
+        image: '/moonstar/10-bed-hall.jpg',
         caption: 'Quiet workspace and high-speed Wi-Fi connectivity.',
         aspectRatio: 'landscape'
     }

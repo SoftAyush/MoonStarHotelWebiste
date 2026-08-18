@@ -9,7 +9,7 @@ import { HOTEL_INFO } from '@/constants/hotelData';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative h-screen min-h-[680px] w-full flex items-center justify-center overflow-hidden bg-obsidian-950">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-obsidian-950 py-28">
       {/* Hero Background Image */}
       <motion.div
         initial={{ scale: 1.15 }}
@@ -18,7 +18,7 @@ export const HeroSection: React.FC = () => {
         className="absolute inset-0 z-0"
       >
         <Image
-          src="/moonstar/bar-area.jpeg"
+          src="/moonstar/terrace.jpg"
           alt="Moon Star Restaurant & Lodge interior"
           fill
           priority

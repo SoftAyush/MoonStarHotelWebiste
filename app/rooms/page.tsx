@@ -174,7 +174,7 @@ export default function RoomsPage() {
             {/* Image Side */}
             <div className="relative h-96 sm:h-96 rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1519167758993-05379900f3a9?q=80&w=800&auto=format&fit=crop"
+                src="/moonstar/event-hall.jpg"
                 alt="Moon Star Lodge Event & Program Hall in Hetauda"
                 fill
                 className="object-cover"

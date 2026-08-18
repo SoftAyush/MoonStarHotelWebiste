@@ -52,9 +52,9 @@ export const ROOMS_DATA: Room[] = [
         bedType: '10 Beds',
         view: 'Room',
         featured: true,
-        image: '/moonstar/single-bed.jpeg',
+        image: '/moonstar/10-bed-hall.jpg',
         gallery: [
-            '/moonstar/single-bed.jpeg'
+            '/moonstar/10-bed-hall.jpg'
         ],
         amenities: ['Shared Bathroom', 'Hot Shower', 'Free Wi-Fi'],
         features: ['Group Space', 'Daily Housekeeping', '24/7 Support']

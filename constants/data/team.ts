@@ -4,7 +4,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     {
         name: 'Moon Star Hospitality Management',
         role: 'Managing Team',
-        image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop',
+        image: '/gallery/reception.jpeg',
         bio: 'Dedicated to providing high quality lodge accommodation and delicious restaurant dining in Hetauda.'
     },
     {
