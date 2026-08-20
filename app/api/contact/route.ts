@@ -94,7 +94,6 @@ export async function POST(request: Request) {
                   ${renderRow('Room Type', safe.roomType)}
                   ${renderRow('Check-in', safe.checkIn)}
                   ${renderRow('Check-out', safe.checkOut)}
-                  // ${renderRow('Guests', safe.guests)}
                 </table>
               </td>
             </tr>
