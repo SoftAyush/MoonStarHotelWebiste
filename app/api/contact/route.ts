@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       roomType,
       checkIn,
       checkOut,
-      guests,
+      // guests,
       message,
     } = body;
 
@@ -42,14 +42,10 @@ export async function POST(request: Request) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    console.log("RESEND_API_KEY exists:", Boolean(apiKey));
-
     const recipient = process.env.CONTACT_TO_EMAIL || 'moonstarhotel@gmail.com';
     const fromAddress = process.env.RESEND_FROM_EMAIL || 'Moon Star Booking <onboarding@resend.dev>';
-    console.log("FROM_EMAIL:", fromAddress);
 
     if (!apiKey) {
-        console.error("RESEND_API_KEY is missing from this deployment");
 
       return NextResponse.json(
         // { success: false, error: 'Resend API key is missing.' },
@@ -68,7 +64,7 @@ export async function POST(request: Request) {
       roomType: escapeHtml(roomType || 'Not selected'),
       checkIn: escapeHtml(checkIn || 'Not provided'),
       checkOut: escapeHtml(checkOut || 'Not provided'),
-      guests: escapeHtml(guests || 'Not provided'),
+      // guests: escapeHtml(guests || 'Not provided'),
       subject: escapeHtml(subject || 'Booking Inquiry'),
       message: escapeHtml(message || 'No additional message provided').replace(/\n/g, '<br />'),
     };
@@ -98,7 +94,7 @@ export async function POST(request: Request) {
                   ${renderRow('Room Type', safe.roomType)}
                   ${renderRow('Check-in', safe.checkIn)}
                   ${renderRow('Check-out', safe.checkOut)}
-                  ${renderRow('Guests', safe.guests)}
+                  // ${renderRow('Guests', safe.guests)}
                 </table>
               </td>
             </tr>
