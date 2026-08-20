@@ -46,6 +46,7 @@ export async function POST(request: Request) {
 
     const recipient = process.env.CONTACT_TO_EMAIL || 'moonstarhotel@gmail.com';
     const fromAddress = process.env.RESEND_FROM_EMAIL || 'Moon Star Booking <onboarding@resend.dev>';
+    console.log("FROM_EMAIL:", fromAddress);
 
     if (!apiKey) {
         console.error("RESEND_API_KEY is missing from this deployment");
