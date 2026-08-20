@@ -42,12 +42,18 @@ export async function POST(request: Request) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
+    console.log("RESEND_API_KEY exists:", Boolean(apiKey));
+
     const recipient = process.env.CONTACT_TO_EMAIL || 'moonstarhotel@gmail.com';
     const fromAddress = process.env.RESEND_FROM_EMAIL || 'Moon Star Booking <onboarding@resend.dev>';
 
     if (!apiKey) {
+        console.error("RESEND_API_KEY is missing from this deployment");
+
       return NextResponse.json(
-        { success: false, error: 'Resend API key is missing.' },
+        // { success: false, error: 'Resend API key is missing.' },
+        { success: false, error: 'Unable to send your message. The email service is currently unavailable. Please try again later.' },
+
         { status: 500 }
       );
     }
